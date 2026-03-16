@@ -40,12 +40,33 @@ Key Libraries: rospy, sensor_msgs, cv_bridge, opencv-python (cv2), rosbag, ultra
 
 *Provide clear, step-by-step instructions:*
 
-1. Clone the repository
-2. Install dependencies
+1. Clone the repository and setup workspace
+```text
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone [Your-GitHub-Repository-Link] vehicle_detection
+```
+2. Install Python dependencies
+```text
+pip3 install opencv-python ultralytics
+```
 3. Build the ROS package
+```text
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+```
 4. Place the rosbag file
-5. Launch the pipeline
-
+```text
+chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/single_pipeline.py
+chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/bag_extractor.py
+```
+6. Launch the pipeline
+Start a ROS core and run the pipeline node directly. Note: Ensure your rosbag path inside single_pipeline.py is updated to point to your local .bag file.
+```text
+roscore &
+rosrun vehicle_detection single_pipeline.py
+```
 ## 6. Sample Results
 
 *Include:*
@@ -81,4 +102,6 @@ Key Libraries: rospy, sensor_msgs, cv_bridge, opencv-python (cv2), rosbag, ultra
 
 ## 9. References
 
-*List any references, libraries, or datasets used.*
+Ultralytics YOLOv8 Documentation: https://docs.ultralytics.com/
+
+ROS Noetic cv_bridge Tutorial: http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
