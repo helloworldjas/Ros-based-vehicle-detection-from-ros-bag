@@ -86,7 +86,7 @@ rosrun vehicle_detection single_pipeline.py
 
 ### (a) What Did You Learn? *(2 marks)*
 
-*Identify at least two specific technical skills or concepts you gained.*
+during the process of this assignment i learned how to construct the ros bag 
 
 ### (b) How Did You Use AI Tools? *(2 marks)*
 
