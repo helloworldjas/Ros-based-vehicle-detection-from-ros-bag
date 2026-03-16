@@ -1,6 +1,6 @@
 # Ros-based-vehicle-detection-from-ros-bag
 AAE4011 assignment1 question 3 
-> Student Name:Lam Tsz Shun | **Student ID:** 25019837D | **Date:** 15/3/2026
+> Student Name:Lam Tsz Shun | Student ID: 25019837D | Date: 15/3/2026
 
 ---
 
@@ -106,7 +106,9 @@ i used gemini to guide me setup the ROS environment and the ROSbag strcture.it a
 
 ### (d) Real-World Challenges *(2 marks)*
 
-*Discuss two challenges of deploying this pipeline on an actual drone in real time.*
+1. Computational Limitations: Running deep learning models like YOLOv8 on an actual drone's companion computer like a Raspberry Pi is computationally expensive.This can severely drop the frames per second , leading to processing latency that could cause the drone to react too slowly to dynamic obstacles in real time.
+
+2. Variable Lighting and Weather real-world drone cameras are exposed to extreme glare, harsh shadows, rain, and low-light conditions. The high noise from raw data and mist will highly affect the accuracy of the detection to surrounding. 
 
 ## 9. References
 
