@@ -85,26 +85,24 @@ summery/result of the rosbag<br>
 
 ## 7. Video Demonstration *(Q3.2 — 5 marks)*
 
-**Video Link:** [YouTube (Unlisted)]([https://youtu.be/your-link-here](https://youtu.be/JFdefZvHPwU))
+**Video Link:** [YouTube (Unlisted)](https://youtu.be/JFdefZvHPwU)
 
-*The video (1–3 min) should show:*
-- (a) Launching the ROS package
-- (b) The UI displaying detection results
-- (c) A brief explanation of the results
 
 ## 8. Reflection & Critical Analysis *(Q3.3 — 8 marks, 300–500 words)*
 
 ### (a) What Did You Learn? *(2 marks)*
 
-during the process of this assignment i learned how to construct the ros bag 
+during the process of this assignment i learned how to manage ROS message types, specifically converting messages into usable OpenCV arrays. I also learned how to build a complex structure programme managed with some AI agent. The AI agent also help me to debug or solve the problem that appear during constructing the whole Ros enviroment. While follow the step from AI i also learn skills to read the python code and the ROS structure need in this assignment. In the final stage writing readme recab the memory to writing the markdown format file.
 
 ### (b) How Did You Use AI Tools? *(2 marks)*
 
-*Describe how you used AI assistants. Discuss both benefits and limitations. If you did not use any, explain your alternative approach.*
+i used gemini to guide me setup the ROS environment and the ROSbag strcture.it also  helped me diagnose a  error caused by Windows line endings, and it provided the mathematical approach (cv2.copyMakeBorder) needed to append a clean, non-overlapping side panel to my OpenCV video window Then i used antigravity with claude to help my coding part which is the UI architecture, debug coding errors and design the python code of the single launch pipline programme. The limitation of using AI in this assignment is the AI agent will limit the output or hallucinate due to context window is small as it will forget the requirement i set in the beginning part of the prompt or the setting set itself. so setting up agent skill for the AI agent is important to reduce the token use during the AI is reading the context.
 
 ### (c) How to Improve Accuracy? *(2 marks)*
 
-*Propose two concrete strategies to improve detection accuracy and explain why each would help.*
+1. Lowering the Confidence Threshold, that will increase the sensitivity. As YOLO discards detections below a 25% confidence score. Lowering this threshold to helps the model identify distant or partially obscured vehicles that lack clear distinguishing features.<br>
+
+2. Increasing Inference Resolution YOLOv8 downscales images to 640x640 before processing. By forcing the model to process at a higher resolution using the "imgsz=1280" parameter,distant vehicles retain more pixel density, making them significantly easier for the neural network to detect
 
 ### (d) Real-World Challenges *(2 marks)*
 
