@@ -14,21 +14,27 @@ AAE4011 assignment1 question 3
 *For this project, I selected the **YOLOv8 Nano (`yolov8n.pt`)** object detection model. YOLOv8 was chosen because of its exceptional balance between speed and accuracy, which is critical for real-time video processing. Because the model is lightweight, it can process the rosbag video feed smoothly without requiring high-end GPU hardware, while still accurately identifying standard vehicle classes (cars, buses, motorcycles, and trucks) from the COCO dataset.*
 
 ## 3. Repository Structure
-
-*catkin_ws/src/vehicle_detection/*
-*├── CMakeLists.txt*
-*├── package.xml*
-*├── launch/*
-*│   └── pipeline.launch           # Launch file to run the entire project*
-*├── scripts/*
+```text
+catkin_ws/src/vehicle_detection/
+├── CMakeLists.txt
+├── package.xml
+├── launch/
+│   └── pipeline.launch           # Launch file to run the entire project
+├── scripts/
 │   ├── bag_extractor.py          # Script for Q3.1 image extraction requirement
 │   └── single_pipeline.py        # Main Python script for detection and UI
 └── data/
-    └── [Your_Rosbag_File].bag    # Place the assignment rosbag here.*
-
+    └── [Your_Rosbag_File].bag    # Place the rosbag here
+```
 ## 4. Prerequisites
 
-*List required software and dependencies (OS, ROS version, Python version, key libraries).*
+OS: Ubuntu 20.04
+
+ROS Version: ROS Noetic
+
+Python Version: Python 3.8+
+
+Key Libraries: rospy, sensor_msgs, cv_bridge, opencv-python (cv2), rosbag, ultralytics (YOLO)
 
 ## 5. How to Run *(Q3.1 — 2 marks)*
 
