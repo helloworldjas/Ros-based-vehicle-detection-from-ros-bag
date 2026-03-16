@@ -38,13 +38,11 @@ Key Libraries: rospy, sensor_msgs, cv_bridge, opencv-python (cv2), rosbag, ultra
 
 ## 5. How to Run *(Q3.1 — 2 marks)*
 
-*Provide clear, step-by-step instructions:*
-
 1. Clone the repository and setup workspace
 ```text
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-git clone [Your-GitHub-Repository-Link] vehicle_detection
+git clone https://github.com/helloworldjas/Ros-based-vehicle-detection-from-ros-bag
 ```
 
 2. Build the ROS package
@@ -58,24 +56,29 @@ source devel/setup.bash
 ```text
 pip3 install opencv-python ultralytics matplotlib numpy
 ```
+4. install ROS Packages
+```text
+sudo apt update
+sudo apt install ros-noetic-cv-bridge ros-noetic-image-transport
 
-4. Make Scripts Executable
+```
+5. Make Scripts Executable
 ```text
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/single_pipeline.py
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/bag_extractor.py
 ```
-5.Prepare the Rosbag Data
+6.Prepare the Rosbag Data
 
-lace the provided .bag file into the data/ folder. Open single_pipeline.py and ensure the bag_file and topic_name variables match your specific rosbag file.
+lace the provided .bag file into the data/ folder. Open single_pipeline.py and ensure the bag_file and topic_name variables match your specific rosbag file. ~line 
 ```text
 rosbag info [directry of the bag].bag    #To check the Rosbag info for the pipeline to launch 
 ```
 
-6. Launch the pipeline<br>
-Start a ROS core and run the pipeline node directly. Note: Ensure your rosbag path inside single_pipeline.py is updated to point to your local .bag file.
+7. Launch the pipeline<br>
+Start a ROS core and run the pipeline node directly. Note: Ensure your rosbag path inside single_pipeline.py is updated to point to your local .bag file.(in line 49 and 50)
 ```text
 cd ~/catkin_ws/src/vehicle_detection/scripts
-python3 single_pipeline.py
+python3 single_pipeline_ui.py
 ```
 ## 6. Sample Results
 sample screen<br>
