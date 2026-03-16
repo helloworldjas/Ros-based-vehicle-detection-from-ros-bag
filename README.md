@@ -6,15 +6,25 @@ AAE4011 assignment1 question 3
 
 ## 1. Overview
 
-*Briefly describe what this project does (1–2 sentences).*
+*TThis project implements a complete ROS-based computer vision pipeline to detect vehicles from a drone camera feed. The pipeline extracts frames from a provided `.bag` file, processes them using a deep learning model, and visualizes the bounding boxes, class labels, and confidence scores in a continuous UI.
+ *
 
 ## 2. Detection Method *(Q3.1 — 2 marks)*
 
-*Explain the detection model/architecture you chose (e.g., YOLOv5, SSD, Faster R-CNN) and why you selected it.*
+*For this project, I selected the **YOLOv8 Nano (`yolov8n.pt`)** object detection model. YOLOv8 was chosen because of its exceptional balance between speed and accuracy, which is critical for real-time video processing. Because the model is lightweight, it can process the rosbag video feed smoothly without requiring high-end GPU hardware, while still accurately identifying standard vehicle classes (cars, buses, motorcycles, and trucks) from the COCO dataset.*
 
 ## 3. Repository Structure
 
-*Show your ROS package file layout (package.xml, CMakeLists.txt, launch files, scripts, etc.).*
+*catkin_ws/src/vehicle_detection/
+├── CMakeLists.txt
+├── package.xml
+├── launch/
+│   └── pipeline.launch           # Launch file to run the entire project
+├── scripts/
+│   ├── bag_extractor.py          # Script for Q3.1 image extraction requirement
+│   └── single_pipeline.py        # Main Python script for detection and UI
+└── data/
+    └── [Your_Rosbag_File].bag    # Place the assignment rosbag here.*
 
 ## 4. Prerequisites
 
