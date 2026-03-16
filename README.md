@@ -67,13 +67,12 @@ sudo apt install ros-noetic-cv-bridge ros-noetic-image-transport
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/single_pipeline.py
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/bag_extractor.py
 ```
-6.Prepare the Rosbag Data
+6. Prepare the Rosbag Data
 
 lace the provided .bag file into the data/ folder. Open single_pipeline.py and ensure the bag_file and topic_name variables match your specific rosbag file. ~line 
 ```text
 rosbag info [directry of the bag].bag    #To check the Rosbag info for the pipeline to launch 
 ```
-
 7. Launch the pipeline<br>
 Start a ROS core and run the pipeline node directly. Note: Ensure your rosbag path inside single_pipeline.py is updated to point to your local .bag file.(in line 49 and 50)
 ```text
