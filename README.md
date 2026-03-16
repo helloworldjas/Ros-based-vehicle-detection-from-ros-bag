@@ -61,7 +61,7 @@ source devel/setup.bash
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/single_pipeline.py
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/bag_extractor.py
 ```
-6. Launch the pipeline
+6. Launch the pipeline<br>
 Start a ROS core and run the pipeline node directly. Note: Ensure your rosbag path inside single_pipeline.py is updated to point to your local .bag file.
 ```text
 roscore &
