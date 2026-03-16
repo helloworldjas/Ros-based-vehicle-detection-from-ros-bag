@@ -1,6 +1,6 @@
 # Ros-based-vehicle-detection-from-ros-bag
 AAE4011 assignment1 question 3 
-> **Student Name:Lam Tsz Shun | **Student ID:** 25019837D | **Date:** 15/3/2026
+> Student Name:Lam Tsz Shun | **Student ID:** 25019837D | **Date:** 15/3/2026
 
 ---
 
@@ -22,7 +22,7 @@ catkin_ws/src/vehicle_detection/
 │   └── pipeline.launch           # Launch file to run the entire project
 ├── scripts/
 │   ├── bag_extractor.py          # Script for Q3.1 image extraction requirement
-│   └── single_pipeline.py        # Main Python script for detection and UI
+│   └── single_pipeline_ui.py        # Main Python script for detection and UI
 └── data/
     └── [Your_Rosbag_File].bag    # Place the rosbag here
 ```
@@ -46,32 +46,42 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 git clone [Your-GitHub-Repository-Link] vehicle_detection
 ```
-2. Install Python dependencies
-```text
-pip3 install opencv-python ultralytics
-```
-3. Build the ROS package
+
+2. Build the ROS package
 ```text
 cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```
-4. Place the rosbag file
+
+3. Install Python dependencies
+```text
+pip3 install opencv-python ultralytics matplotlib numpy
+```
+
+4. Make Scripts Executable
 ```text
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/single_pipeline.py
 chmod +x ~/aae4011_ws/src/vehicle_detection/scripts/bag_extractor.py
 ```
+5.Prepare the Rosbag Data
+
+lace the provided .bag file into the data/ folder. Open single_pipeline.py and ensure the bag_file and topic_name variables match your specific rosbag file.
+```text
+rosbag info [directry of the bag].bag    #To check the Rosbag info for the pipeline to launch 
+```
+
 6. Launch the pipeline<br>
 Start a ROS core and run the pipeline node directly. Note: Ensure your rosbag path inside single_pipeline.py is updated to point to your local .bag file.
 ```text
-roscore &
-rosrun vehicle_detection single_pipeline.py
+cd ~/catkin_ws/src/vehicle_detection/scripts
+python3 single_pipeline.py
 ```
 ## 6. Sample Results
-
-*Include:*
-- Image extraction summary (total frames, resolution, topic name)
-- Detection results (sample screenshot, detection statistics)
+sample screen<br>
+<img width="3004" height="1973" alt="Advanced Vehicle Detection UI_screenshot_16 03 2026" src="https://github.com/user-attachments/assets/a3b35d76-b899-45f3-9962-2fc56b375c7b" />
+summery/result of the rosbag<br> 
+<img width="2126" height="1051" alt="image" src="https://github.com/user-attachments/assets/ddd5ade8-7f6f-4ab1-a563-45bd5c3183a2" />
 
 ## 7. Video Demonstration *(Q3.2 — 5 marks)*
 
@@ -105,3 +115,7 @@ during the process of this assignment i learned how to construct the ros bag
 Ultralytics YOLOv8 Documentation: https://docs.ultralytics.com/
 
 ROS Noetic cv_bridge Tutorial: http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
+
+cv_bridge Tutorials: http://wiki.ros.org/cv_bridge
+
+OpenCV Documentation: https://docs.opencv.org/
