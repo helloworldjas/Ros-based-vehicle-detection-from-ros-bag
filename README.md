@@ -15,12 +15,12 @@ AAE4011 assignment1 question 3
 
 ## 3. Repository Structure
 
-*catkin_ws/src/vehicle_detection/
-├── CMakeLists.txt
-├── package.xml
-├── launch/
-│   └── pipeline.launch           # Launch file to run the entire project
-├── scripts/
+*catkin_ws/src/vehicle_detection/*
+*├── CMakeLists.txt*
+*├── package.xml*
+*├── launch/*
+*│   └── pipeline.launch           # Launch file to run the entire project*
+*├── scripts/*
 │   ├── bag_extractor.py          # Script for Q3.1 image extraction requirement
 │   └── single_pipeline.py        # Main Python script for detection and UI
 └── data/
